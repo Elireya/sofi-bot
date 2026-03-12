@@ -4,9 +4,17 @@ import os
 import time
 
 TOKEN = os.environ.get('BOT_TOKEN')
+
+if not TOKEN:
+    print("❌ ОШИБКА: BOT_TOKEN не найден в переменных окружения")
+    sys.exit(1)
+
+print(f"✅ Токен найден: {TOKEN[:5]}")
+
 bot = telebot.TeleBot(TOKEN)
 
-@bot.message_handler(commands=['start'])
+
+@bot.message_handler(commands=['menu'])
 def start(message):
     markup = types.ReplyKeyboardMarkup(
         resize_keyboard=True,
