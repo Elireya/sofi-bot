@@ -19,7 +19,7 @@ def start(message):
 
     msg = bot.send_message(
         message.chat.id,
-        "...",
+        "Для вашего удобства добавили кнопки 😇",
         reply_markup = markup
     )
 
